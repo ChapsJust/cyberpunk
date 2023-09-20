@@ -10,11 +10,6 @@ config_version=5
 
 [application]
 
-config/name="Cyberpunk"
-config/features=PackedStringArray("4.1", "GL Compatibility")
+config/name="Cyberpunk-EdgeRunner"
+config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
-
-[rendering]
-
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
