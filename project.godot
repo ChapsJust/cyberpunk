@@ -15,8 +15,16 @@ run/main_scene="res://Scenes/Main.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [layer_names]
 
 2d_render/layer_1="Player"
 2d_render/layer_2="enemy"
 2d_render/layer_3="object"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"

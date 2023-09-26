@@ -3,7 +3,8 @@ extends CharacterBody2D
 @onready var animation = $AnimatedSprite2D
 var speed = 200
 @export var gravity = 55
-@export var jump_force = 800
+@export var jump_force = -800
+var doublejump = false
 
 func animation_personnage():
 	if Input.is_action_pressed("ui_right"):
@@ -28,9 +29,13 @@ func _physics_process(delta):
 	else: 
 		velocity.x = 0
 	
-	if Input.is_action_pressed("ui_select"):
-		if is_on_floor():
-			velocity.y = -jump_force
+	if Input.is_action_pressed("ui_select") and is_on_floor():
+		velocity.y = jump_force
+		doublejump = true
+	if doublejump and Input.is_action_pressed("ui_select"):
+		velocity.y = jump_force/2
+		doublejump = false
+		
 			
 	move_and_slide()
 	animation_personnage()

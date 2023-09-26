@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dqgrufv33mvla"]
+[gd_scene load_steps=35 format=3 uid="uid://dqgrufv33mvla"]
 
 [ext_resource type="Script" path="res://Scenes/scipts/player.gd" id="1_ba8cm"]
 [ext_resource type="Texture2D" uid="uid://dl68dbsybnuwb" path="res://Assets/cyberPunkCharacters/3 Cyborg/Cyborg_attack1.png" id="1_sw2vv"]
@@ -134,7 +134,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"attaque_1",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -196,7 +196,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"jump",
-"speed": 2.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -219,28 +219,21 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 5.0
+"speed": 12.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jg7k4"]
 radius = 7.00003
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mcltf"]
-size = Vector2(9.5, 5)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_ba8cm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0qbsv")
-animation = &"attaque_1"
-frame_progress = 0.353162
+animation = &"jump"
+frame_progress = 0.605717
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-7, 10)
 rotation = -3.14159
 shape = SubResource("CapsuleShape2D_jg7k4")
-
-[node name="collision_attaque" type="CollisionShape2D" parent="."]
-position = Vector2(1.25, 0)
-shape = SubResource("RectangleShape2D_mcltf")
