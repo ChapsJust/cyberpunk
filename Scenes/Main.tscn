@@ -1,3 +1,12 @@
-[gd_scene format=3 uid="uid://dkadtjavyh0ra"]
+[gd_scene load_steps=3 format=3 uid="uid://dkadtjavyh0ra"]
+
+[ext_resource type="PackedScene" uid="uid://punnp55r02xm" path="res://Scenes/TileMapTerrain.tscn" id="1_5wxkm"]
+[ext_resource type="PackedScene" uid="uid://dqgrufv33mvla" path="res://Scenes/player.tscn" id="2_hq35a"]
 
 [node name="Node" type="Node"]
+
+[node name="map_principale" parent="." instance=ExtResource("1_5wxkm")]
+z_index = -1
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_hq35a")]
+position = Vector2(77, 586)
