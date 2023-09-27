@@ -40,15 +40,7 @@ func _physics_process(delta):
 	if compteur_jump < jump_max:
 		if Input.is_action_just_pressed("ui_select"):
 			jump()
-
-	if Input.is_action_pressed("ui_select") and is_on_floor():
-		velocity.y = jump_force
-		doublejump = true
-	if doublejump and Input.is_action_pressed("ui_select"):
-		velocity.y = jump_force/2
-		doublejump = false
 		
-
 			
 	#dash
 	if Input.is_action_just_pressed("dash"):
@@ -64,7 +56,9 @@ func jump():
 		
 func dash():
 	speed = speed * 3
-	$Timer.start()
+	print(speed)
+	if speed == 450:
+		$Timer.start()
 	
 
 func _on_timer_timeout():
