@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var animation = $AnimatedSprite2D
+@onready var colision = $CollisionShape2D
 var speed = 150
 @export var gravity = 55
 @export var jump_force = 600
@@ -11,9 +12,11 @@ var doublejump = false
 
 func animation_personnage():
 	if Input.is_action_pressed("ui_right"):
+		colision.position.x = 0
 		animation.flip_h = false
 		animation.play("run")
 	elif Input.is_action_pressed("ui_left"):
+		colision.position.x = 17
 		animation.flip_h = true
 		animation.play("run")
 	elif velocity.x == 0:

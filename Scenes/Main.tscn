@@ -9,4 +9,4 @@
 z_index = -1
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_hq35a")]
-position = Vector2(77, 586)
+position = Vector2(56, 589)
