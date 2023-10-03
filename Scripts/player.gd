@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 @onready var animation = $AnimatedSprite2D
 @onready var colision = $CollisionShape2D
-var speed = 150
+@export var speed = 150
+@export var dash_speed = 500
 @export var gravity = 40
 @export var jump_force = 600
 var jump_max = 2
@@ -57,11 +58,16 @@ func jump():
 		
 func dash():
 	if speed == 150:
-		speed = speed * 3
+		speed = dash_speed
 		print(speed)
-	if speed == 450:
+	if speed == dash_speed:
 		$Timer.start()
 	
 
 func _on_timer_timeout():
 	speed = 150
+	
+func increment_jump_max():
+	jump_max += 1
+	print("Jump max increased to:", jump_max)
+
