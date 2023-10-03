@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://chv2320xtfq13"]
+
+[ext_resource type="Texture2D" uid="uid://c006b03ftvg6i" path="res://Assets/exclusionZone/3 Objects/—Pngtree—icon pill medicine health_6603640.png" id="1_1ajvu"]
+
+[node name="pill" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0345833, 0.0395833)
+texture = ExtResource("1_1ajvu")

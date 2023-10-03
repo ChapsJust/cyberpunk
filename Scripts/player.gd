@@ -3,12 +3,11 @@ extends CharacterBody2D
 @onready var animation = $AnimatedSprite2D
 @onready var colision = $CollisionShape2D
 var speed = 150
-@export var gravity = 55
+@export var gravity = 40
 @export var jump_force = 600
 var jump_max = 2
 var compteur_jump = 0
 var doublejump = false
-
 
 func animation_personnage():
 	if Input.is_action_pressed("ui_right"):
@@ -43,8 +42,7 @@ func _physics_process(delta):
 	if compteur_jump < jump_max:
 		if Input.is_action_just_pressed("ui_select"):
 			jump()
-		
-			
+
 	#dash
 	if Input.is_action_just_pressed("dash"):
 		dash()
@@ -58,8 +56,9 @@ func jump():
 	print(compteur_jump)
 		
 func dash():
-	speed = speed * 3
-	print(speed)
+	if speed == 150:
+		speed = speed * 3
+		print(speed)
 	if speed == 450:
 		$Timer.start()
 	
